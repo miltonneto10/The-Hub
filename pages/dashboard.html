@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Administrativo - The Hub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">The Hub</a>
+      <div class="d-flex">
+        <button class="btn btn-outline-light btn-sm" onclick="logout()">Sair</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <h2 class="text-primary mb-4">Painel Administrativo</h2>
+
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="card text-center shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Cupons</h5>
+            <p class="card-text">Gerencie todos os cupons cadastrados.</p>
+            <a href="cupons.html" class="btn btn-primary">Acessar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card text-center shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Lojas</h5>
+            <p class="card-text">Gerencie suas lojas e parceiros afiliados.</p>
+            <a href="lojas.html" class="btn btn-primary">Acessar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card text-center shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Trackings</h5>
+            <p class="card-text">Gerencie os links de afiliados e rastreamentos.</p>
+            <a href="trackings.html" class="btn btn-primary">Acessar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Proteção de rota
+    if (!localStorage.getItem('auth')) {
+      window.location.href = 'login.html';
+    }
+
+    function logout() {
+      localStorage.removeItem('auth');
+      window.location.href = 'login.html';
+    }
+  </script>
+</body>
+</html>
